@@ -107,23 +107,18 @@
             )
               .then(response => {
                 load(response)
-                // this.$notification.success({
-                //   message: 'Uploaded successfully, info: ' + response
-                // })
+                console.log('[succss] Uploaded successfully, info: ', response)
                 this.$emit('success', response, file)
               })
               .catch(failure => {
-                console.log('failure', failure)
-                this.$notification.error({
-                  message: 'Failed to upload file, info: ' + failure
-                })
+                console.log('[error] Failed to upload file, info: ', failure)
                 this.$emit('failure', failure, file)
                 error()
               })
             return {
               abort: () => {
                 abort()
-                this.$notification.success('Upload operation aborted by the user')
+                console.log('[succss] Upload operation aborted by the user')
                 // source.cancel('Upload operation canceled by the user.')
               }
             }
