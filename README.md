@@ -12,7 +12,7 @@
 
 - demo-file-chuck-upload-vue-page：vue2前端项目
 
-# 相关参考链接
+# 相关链接
 
 - https://github.com/pqina/vue-filepond
 
