@@ -1,5 +1,7 @@
 # 文件分片上传DEMO
 
+最近在 [ikaros](https://github.com/li-guohao/ikaros) 中涉及到番剧大的剧集文件上传(以G为单位)，好像挺复杂的，先整个DEMO试试水。
+
 后端使用 SpringBoot2.7.4
 
 前端使用 [vue-filepond](https://github.com/pqina/vue-filepond)
@@ -11,6 +13,8 @@
 - demo-file-chuck-upload-vue-page：vue2前端项目
 
 # 相关参考链接
+
+- https://github.com/pqina/vue-filepond
 
 - [Easy File Uploading With JavaScript | FilePond | Properties](https://pqina.nl/filepond/docs/api/instance/properties/)
 
