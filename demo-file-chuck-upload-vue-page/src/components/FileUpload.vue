@@ -101,38 +101,51 @@
     data: function () {
       return {
         server: {
-          process: (fieldName, file, metadata, load, error, progress, abort) => {
-            this.uploadHandler(
-              file,
-              {
-                onUploadProgress: progressEvent => {
-                  if (progressEvent.total > 0) {
-                    progress(progressEvent.lengthComputable, progressEvent.loaded, progressEvent.total)
-                  }
-                }
-              }
-            )
-              .then(response => {
-                load(response)
-                console.log('[succss] Uploaded successfully, info: ', response)
-                this.$emit('success', response, file)
-              })
-              .catch(failure => {
-                console.log('[error] Failed to upload file, info: ', failure)
-                this.$emit('failure', failure, file)
-                error()
-              })
-            return {
-              abort: () => {
-                abort()
-                console.log('[succss] Upload operation aborted by the user')
-                // source.cancel('Upload operation canceled by the user.')
-              }
-            }
-          },
-          processChuck: {
-
-          },
+        //   process: (fieldName, file, metadata, load, error, progress, abort, transfer, options) => {
+        //     console.log('fieldName', fieldName)
+        //     console.log('file', file)
+        //     console.log('metadata', metadata)
+        //     console.log('load', load)
+        //     console.log('error', error)
+        //     console.log('progress', progress)
+        //     console.log('abort', abort)
+        //     console.log('transfer', transfer)
+        //     console.log('options', options)
+        //     this.uploadHandler(
+        //       file,
+        //       {
+        //         onUploadProgress: progressEvent => {
+        //           if (progressEvent.total > 0) {
+        //             progress(progressEvent.lengthComputable, progressEvent.loaded, progressEvent.total)
+        //           }
+        //         }
+        //       }
+        //     )
+        //     .then(response => {
+        //         load(response)
+        //         console.log('[succss] Uploaded successfully, info: ', response)
+        //         this.$emit('success', response, file)
+        //         })
+        //         .catch(failure => {
+        //         console.log('[error] Failed to upload file, info: ', failure)
+        //         this.$emit('failure', failure, file)
+        //         error()
+        //     })
+        //     return {
+        //       abort: () => {
+        //         abort()
+        //         console.log('[succss] Upload operation aborted by the user')
+        //         // source.cancel('Upload operation canceled by the user.')
+        //       }
+        //     }
+        //   }
+            url: 'http://localhost:9090/',
+            process: './file/process',
+            revert: './file/revert',
+            restore: './file/restore/',
+            load: './file/load/',
+            fetch: './file/fetch/',
+            patch: './file/patch/'
         },
         fileList: []
       }

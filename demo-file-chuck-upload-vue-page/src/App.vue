@@ -1,6 +1,6 @@
 <template>
   <div class="root">
-    <FileUpload ref="filePondUploadRef" :enableChunkUploads="true" :enableChunkForce="true" :chunkSize="5000000" :uploadHandler="uploadHandler" />
+    <FileUpload ref="filePondUploadRef" :enableChunkUploads="true" :enableChunkForce="true" :chunkSize="50000000" :uploadHandler="uploadHandler" />
   </div>
 </template>
 
