@@ -11,7 +11,7 @@ const request = axios.create({
     timeout: 60000
 })
 
-export function upload (file) {
+export function upload (file, onUploadProgress) {
     const formData = new FormData()
     formData.append('file', file)
 
@@ -21,6 +21,7 @@ export function upload (file) {
         data: formData,
         headers: {
         'Content-Type': 'multipart/form-data'
-        }
+        },
+        onUploadProgress: onUploadProgress
     })
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="root">
-    <FileUpload ref="filePondUploadRef" :uploadHandler="uploadHandler" />
+    <FileUpload ref="filePondUploadRef" :enableChunkUploads="true" :enableChunkForce="true" :chunkSize="5000000" :uploadHandler="uploadHandler" />
   </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
   components: { FileUpload },
   data () {
     return {
-      uploadHandler: (file, options) => upload(file, options)
+      uploadHandler: (file, onUploadProgress) => upload(file, onUploadProgress)
     }
   }
 }

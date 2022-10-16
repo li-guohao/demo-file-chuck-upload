@@ -14,6 +14,7 @@
         :server="server"
         :chunkUploads="enableChunkUploads"
         :chunkSize="chunkSize"
+        :chunkForce="enableChunkForce"
         fileValidateTypeLabelExpectedTypes="请选择 {lastType} 格式的文件"
         labelFileProcessing="上传中"
         labelFileProcessingAborted="取消上传"
@@ -83,12 +84,19 @@
         required: false,
         default: false
       },
+      // 是否强制分片上传
+      enableChunkForce: {
+        type: Boolean,
+        required: false,
+        default: false
+      },
       // 分片上传单片字节大小，默认 50MB
       chunkSize: {
         type: Number,
         required: false,
         default: 50000000
       }
+
     },
     data: function () {
       return {
@@ -102,8 +110,7 @@
                     progress(progressEvent.lengthComputable, progressEvent.loaded, progressEvent.total)
                   }
                 }
-              },
-              this.field
+              }
             )
               .then(response => {
                 load(response)
@@ -122,7 +129,10 @@
                 // source.cancel('Upload operation canceled by the user.')
               }
             }
-          }
+          },
+          processChuck: {
+
+          },
         },
         fileList: []
       }
