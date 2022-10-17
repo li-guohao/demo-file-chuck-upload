@@ -1,4 +1,4 @@
-package cn.liguohao.demo.demofilechuckuploadbackend;
+package cn.liguohao.demo.file;
 
 import java.io.File;
 

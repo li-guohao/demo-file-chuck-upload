@@ -8,9 +8,9 @@
 
 # 目录
 
-- demo-file-chuck-upload-backend: spirngboot后端项目
+- demo-file-chunk-upload-backend: spirngboot后端项目
 
-- demo-file-chuck-upload-vue-page：vue2前端项目
+- demo-file-chunk-upload-vue-page：vue2前端项目
 
 # 相关链接
 
